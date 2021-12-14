@@ -1,4 +1,5 @@
 require('dotenv').config()
+const methodOverride = require('method-override')
 const express = require('express')
 const app = express()
 const port = process.env.PORT
@@ -9,6 +10,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 //Assets
 app.use(express.static('public'))
