@@ -1,21 +1,10 @@
 const router = require('express').Router()
-let places = [{
-    name: 'H-Thai-ML',
-    city: 'Seattle',
-    state: 'WA',
-    cuisines: 'Thai, Pan-Asian',
-    pic: '/images/thai.jpg'
-}, {
-    name: 'Coding Cat Cafe',
-    city: 'Phoenix',
-    state: 'AZ',
-    cuisines: 'Coffee, Bakery',
-    pic: '/images/cafe.jpg'
-}]
+const places = require('../models/place-models.js')
 
 // GET /places
 router.get('/', (req, res) => {
     res.render('places/index', { places })
+    console.log(places)
 })
 
 // POST /places

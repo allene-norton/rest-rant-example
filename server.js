@@ -15,7 +15,7 @@ app.use(express.static('public'))
 
 
 //Controllers
-app.use('/places', require('./controllers/places-control'))
+app.use('/places', require('./controllers/places-control.js'))
 
 //Root
 app.get('/', (req, res) => {
